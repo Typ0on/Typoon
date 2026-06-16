@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>冯科豪的个人主页</title>
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --accent-color: #2980b9;
+            --bg-color: #f5f7fa;
+            --text-color: #34495e;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Helvetica Neue', Arial, 'Microsoft YaHei', sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        /* 头部设计 */
+        header {
+            background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+            color: white;
+            padding: 40px 30px;
+            text-align: center;
+            position: relative;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            letter-spacing: 2px;
+        }
+
+        .subtitle {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            margin-bottom: 15px;
+        }
+
+        /* 互动打字机 */
+        #typing-text {
+            height: 24px;
+            font-style: italic;
+            color: #f1c40f;
+            font-weight: bold;
+        }
+
+        /* 核心布局 */
+        .content {
+            padding: 30px;
+        }
+
+        section {
+            margin-bottom: 35px;
+            position: relative;
+        }
+
+        h2 {
+            color: var(--primary-color);
+            border-left: 5px solid var(--accent-color);
+            padding-left: 10px;
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+        }
+
+        /* 联系方式样式 */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 8px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            font-size: 0.95rem;
+        }
+
+        .contact-item span {
+            font-weight: bold;
+            margin-right: 8px;
+            color: var(--accent-color);
+        }
+
+        /* 技能与证书交互标签 */
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .tag {
+            background: #eef2f7;
+            color: var(--primary-color);
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            border: 1px solid #dcdde1;
+            user-select: none;
+        }
+
+        .tag:hover {
+            background: var(--accent-color);
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 10px rgba(41, 128, 185, 0.2);
+        }
+
+        /* 互动展示区域 */
+        .interactive-box {
+            background: #e8f4fd;
+            border-left: 4px solid var(--accent-color);
+            padding: 15px;
+            margin-top: 15px;
+            border-radius: 0 8px 8px 0;
+            display: none;
+            animation: fadeIn 0.4s ease forwards;
+        }
+
+        /* 按钮设计 */
+        .btn {
+            background: var(--accent-color);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            transition: background 0.3s;
+            margin-top: 10px;
+        }
+
+        .btn:hover {
+            background: #2171a3;
+        }
+
+        /* 德语特特色卡片 */
+        .deutsch-card {
+            border: 1px dashed var(--accent-color);
+            padding: 20px;
+            border-radius: 8px;
+            background: #fafbfc;
+        }
+
+        #deutsch-intro {
+            line-height: 1.8;
+            margin-bottom: 15px;
+        }
+
+        /* 动画 */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(5px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            font-size: 0.85rem;
+            color: #95a5a6;
+            border-top: 1px solid #eee;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <!-- 头部区域 -->
+    <header>
+        <h1>冯科豪</h1>
+        <div class="subtitle">深圳职业技术大学 · 应用德语专业</div>
+        <!-- 趣味打字机互动点 -->
+        <div id="typing-text"></div>
+    </header>
+
+    <div class="content">
+        <!-- 基本信息 -->
+        <section>
+            <h2>基本信息 / Kontakt</h2>
+            <div class="contact-grid">
+                <div class="contact-item"><span>📞 电话:</span> 18127086481</div>
+                <div class="contact-item"><span>✉️ 邮箱:</span> 3368429454@qq.com</div>
+                <div class="contact-item"><span>🎓 院校:</span> 深圳职业技术大学</div>
+                <div class="contact-item"><span>📖 专业:</span> 应用德语 (Angewandte Germanistik)</div>
+            </div>
+        </section>
+
+        <!-- 德语特色与自我介绍 -->
+        <section>
+            <h2>德语自我介绍 & 商务特长 / Vorstellung</h2>
+            <div class="deutsch-card">
+                <p id="deutsch-intro">
+                    <strong>【中文简介】</strong> 您好！我是冯科豪，来自深圳职业技术大学应用德语专业。我具备扎实的德语听说读写能力，立志将德语与现代商务及数字化技能相结合。不仅熟练掌握办公自动化软件，同时在视觉设计与3D建模领域也有所涉猎，是一位兼具语言能力与跨界技能的复合型人才。
+                </p>
+                <button class="btn" onclick="toggleLanguage()">切换至德语版介绍 / Auf Deutsch</button>
+                <button class="btn" style="background:#27ae60;" onclick="showBusinessTip()">解锁商务德语小彩蛋 💡</button>
+                <div id="business-box" class="interactive-box"></div>
+            </div>
+        </section>
+
+        <!-- 教育经历与技能（包含动态交互） -->
+        <section>
+            <h2>教育经历与技能证书 / Fähigkeiten</h2>
+            <p style="font-size: 0.85rem; color:#7f8c8d; margin-bottom: 10px;">💡 趣味点击：点击下方任意技能标签，查看具体应用场景与详情。</p>
+            
+            <div class="tags">
+                <div class="tag" onclick="showSkill('ps')">🎨 Photoshop & PR</div>
+                <div class="tag" onclick="showSkill('office')">📊 Excel & PPT 等办公软件</div>
+                <div class="tag" onclick="showSkill('3d')">📐 3DMax 技能证书</div>
+                <div class="tag" onclick="showSkill('art')">📜 美术一级证书</div>
+                <div class="tag" onclick="showSkill('computer')">💻 计算机一级证书</div>
+            </div>
+
+            <!-- 技能详情动态展示框 -->
+            <div id="skill-details" class="interactive-box"></div>
+        </section>
+    </div>
+
+    <footer>
+        <p>© 2026 冯科豪的个人趣味简历网站. 保留所有权利.</p>
+    </footer>
+</div>
+
+<script>
+    // 1. 德语打字机特效
+    const welcomeText = "Willkommen auf meiner Profilseite! (欢迎来到我的个人主页！)";
+    let index = 0;
+    function typeEffect() {
+        if (index < welcomeText.length) {
+            document.getElementById("typing-text").innerHTML += welcomeText.charAt(index);
+            index++;
+            setTimeout(typeEffect, 80);
+        }
+    }
+    window.onload = typeEffect;
+
+    // 2. 中德双语自我介绍切换
+    let isGerman = false;
+    function toggleLanguage() {
+        const introP = document.getElementById("deutsch-intro");
+        if (!isGerman) {
+            introP.innerHTML = `<strong>【Deutsche Vorstellung】</strong> Guten Tag! Ich bin Feng Kehao, ein Student der Angewandten Germanistik an der Shenzhen Polytechnischen Universität. Ich besitze solide Deutschkenntnisse in Wort und Schrift. Neben meiner sprachlichen Ausbildung bin ich auch versiert im Umgang mit Office-Software, Photoshop, Premiere und 3DMax. Ich freue mich auf die Zusammenarbeit!`;
+            isGerman = true;
+        } else {
+            introP.innerHTML = `<strong>【中文简介】</strong> 您好！我是冯科豪，来自深圳职业技术大学应用德语专业。我具备扎实的德语听说读写能力，立志将德语与现代商务及数字化技能相结合。不仅熟练掌握办公自动化软件，同时在视觉设计与3D建模领域也有所涉猎，是一位兼具语言能力与跨界技能的复合型人才。`;
+            isGerman = false;
+        }
+    }
+
+    // 3. 技能标签交互
+    function showSkill(type) {
+        const detailBox = document.getElementById("skill-details");
+        detailBox.style.display = "block";
+        
+        let content = "";
+        switch(type) {
+            case 'ps':
+                content = "<strong>🎨 视觉与视频处理 (PS/PR)：</strong> 结合美术基础，能独立完成商务海报设计、图片精修以及德语外宣视频的剪辑与特效制作。";
+                break;
+            case 'office':
+                content = "<strong>📊 办公自动化：</strong> 熟练编写 Excel 数据透视表，能制作精美的中德双语商务汇报 PPT，规范处理日常办公文书。";
+                break;
+            case '3d':
+                content = "<strong>📐 3DMax 技能：</strong> 具备空间建模与渲染能力，可将德语工业、机械或电商外贸中的产品进行三维数字化建模展示。";
+                break;
+            case 'art':
+                content = "<strong>📜 美术一级证书：</strong> 拥有良好的色彩感知与构图能力，为网页设计、UI排版和多媒体视觉传达提供美学支撑。";
+                break;
+            case 'computer':
+                content = "<strong>💻 计算机一级：</strong> 精通计算机基础操作、网络安全基础及现代化数字办公生态。";
+                break;
+        }
+        detailBox.innerHTML = content;
+    }
+
+    // 4. 商务德语彩蛋
+    const businessTips = [
+        "📧 <strong>商务邮件小贴士：</strong> 德语正式邮件开头通常用 'Sehr geehrte Damen und Herren,'（尊敬的女士们、先生们）。",
+        "🤝 <strong>商务礼仪：</strong> 在德国商务谈判中，准时（Pünktlichkeit）被视为最高原则，建议提前5分钟准备就绪。",
+        "📈 <strong>常用外贸词汇：</strong> Angebot (报价), Auftrag (订单), Lieferung (交货)。结合我的专业，能为您精准对接德语区客户！"
+    ];
+    function showBusinessTip() {
+        const tipBox = document.getElementById("business-box");
+        tipBox.style.display = "block";
+        const randomIndex = Math.floor(Math.random() * businessTips.length);
+        tipBox.innerHTML = businessTips[randomIndex];
+    }
+</script>
+
+</body>
+</html>
